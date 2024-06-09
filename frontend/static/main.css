@@ -1,0 +1,341 @@
+body {
+    background-color: #252836;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #2f2f49;
+    color: #ddac58;
+    padding: 23px 250px; /*отступы от текста*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /*центр надписи по вертикали*/
+}
+
+header span {
+    font-family: 'Montserrat', sans-serif; /* используем шрифт Montserrat */
+    font-weight: 700; /* добавляем жирное начертание */
+    font-size: 30px; /*размер шрифта*/
+    font-weight: 400;
+}
+
+.works{
+    margin: 40px 0px 0px 170px;
+    font-size: 18px;
+    color: #FFFF;
+    font-weight: 200;
+    font-family: 'Montserrat', sans-serif;
+}
+.rectangle {
+    background-color: #1f1d2b;
+    margin: 60px auto; /*отступы снаружи*/
+    padding: 50px 120px 55px 100px; /*отступы внутри*/
+    border-radius: 100px;
+    width: 80%; /* задаем ширину контейнера */
+
+}
+
+.Header{
+    width: 600px;
+    background-color: #1f1d2b;
+}
+.Header #header_1{
+    color: #ffff;
+    font-weight: 200;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+}
+
+.Header_2{
+    width: 600px;
+    background-color: #1f1d2b;
+    margin: -5px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+}
+.Header_2 #header_2{
+    color: #ddac58;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+
+}
+.Header_3{
+    width: 500px;
+    background-color: #1f1d2b;
+    margin: 20px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+}
+.Header_3 #header_3{
+    color: #ffff;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+
+}
+.Header_4{
+    width: 500px;
+    background-color: #1f1d2b;
+    margin: 40px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+}
+.Header_4 #header_4{
+    color: #ddac58;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 27px;
+
+}
+
+.Header_5{
+    width: 500px;
+    background-color: #1f1d2b;
+    margin: 15px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+}
+.Header_5 #header_5{
+    color: #ffff;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+
+}
+.line #line {
+    background-color: #ddac58;
+    width: 20;
+    height: 300;
+}
+
+.inner-block {
+    background-color: #666699;
+    color: #FFFF;
+    border: 5px solid black;
+    margin-bottom: 30px; /*отступы между*/
+    margin: -370px -10px 30px 700px; /*отступы снаружи*/
+    padding: 50px 100px 250px 50px; /*отступы внутри*/
+    border-radius: 100px;
+    width: 555px; /* фиксированная ширина */
+    height: 25px; /* фиксированная высота */
+    /* text-align: center;  */
+}
+
+.inner-block .header {
+    background-color: #666699;
+    padding: 0px 0px 0px 0px;
+    width: 250px; /* фиксированная ширина */
+    height: 42px;
+    margin: -15px 0px 0px 20px;
+    align-items: center; /* Вертикальное выравнивание по центру */
+}
+
+.inner-block .header span{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.inner-block .header_2 {
+    background-color: #666699;
+    padding: 0px 0px 0px 0px;
+    width: 280px; /* фиксированная ширина */
+    height: 42px;
+    margin: -42px 0px 0px 335px;
+    align-items: center; /* Вертикальное выравнивание по центру */
+}
+
+.inner-block .header_2 span{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.button_download{
+    background-color: #666699;
+    width: 290px; /* фиксированная ширина */
+    height: 50px;
+    margin: 20px 0px 0px 35px;
+    padding: 0px 0px 0px 0px;
+    
+}
+.button_download #upload-btn {
+    padding: 0px; /* отступы внутри кнопки */
+    background-color: rgb(80, 22, 114); /* фоновый цвет */
+    color: white; /* цвет текста */
+    border-radius: 5px; /* скругление краев */
+    border: none; /* убрать границу */
+    cursor: pointer; /* изменить курсор при наведении */
+    display: inline-block; /* кнопка как строчный блок */
+    text-align: center; /* выравнивание текста по центру */
+    margin: 0px 0px 0px 0px;
+    padding: 10px 20px 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.button_download #upload-btn:hover {
+    background-color: rgb(36, 10, 48); /* новый цвет фона при наведении */
+}
+
+.button_download #upload-btn span{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: 200;
+}
+
+#file-not-loaded{
+    margin-left: 5px; /* отступ слева от кнопки */
+    color: rgb(255, 255, 255); /* цвет текста */
+    font-size: 23px; /* размер шрифта */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.button_download_2{
+    background-color: #666699;
+    margin: -50px 0px 0px 350px;
+    padding: 0px 0px 0px 0px;
+    width: 300px;
+    height: 50px;    
+}
+
+.button_download_2 #upload-btn_2 {
+    padding: 0px; /* отступы внутри кнопки */
+    background-color: rgb(80, 22, 114); /* фоновый цвет */
+    color: white; /* цвет текста */
+    border-radius: 5px; /* скругление краев */
+    border: none; /* убрать границу */
+    cursor: pointer; /* изменить курсор при наведении */
+    display: inline-block; /* кнопка как строчный блок */
+    text-align: center; /* выравнивание текста по центру */
+    margin: 0px 0px 0px 0px;
+    padding: 10px 20px 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.button_download_2 #upload-btn_2:hover {
+    background-color: rgb(36, 10, 48); /* новый цвет фона при наведении */
+}
+
+.button_download_2 #upload-btn_2 span{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: 200;
+}
+
+#file-not-loaded_2 {
+    margin-left: 5px; /* отступ слева от кнопки */
+    color: rgb(255, 255, 255); /* цвет текста */
+    font-size: 23px; /* размер шрифта */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.convert_button{
+    background-color: #666699;
+    width: 200px;
+    height: 50px; 
+    margin: 10px 0px 5px 35px;
+    padding: 0px 0px 0px 0px;
+}
+.convert_button #run-btn{
+    background-color: rgb(80, 22, 114);
+    margin: 0px 0px 0px 0px;
+    padding: 15px 15px 15px 13px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: inline-block; 
+    text-align: center;
+    transition: background-color 0.3s;
+}
+.fas.fa-play{
+    color: rgb(255, 255, 255); 
+}
+.convert_button #run-btn:hover {
+    background-color: rgb(12, 10, 14); /* новый цвет фона при наведении */
+}
+.convert_button #status{
+    color: rgb(255, 255, 255); 
+}
+.convert_button_2{
+    background-color: #666699;
+    width: 200px;
+    height: 50px; 
+    margin: -55px 0px 5px 350px;
+    padding: 0px 0px 0px 0px;
+}
+.convert_button_2 #run-btn_2{
+    background-color: rgb(80, 22, 114);
+    margin: 0px 0px 0px 0px;
+    padding: 15px 15px 15px 13px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: inline-block; 
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.convert_button_2 #run-btn_2:hover {
+    background-color: rgb(36, 10, 48); /* новый цвет фона при наведении */
+}
+
+.save_button{
+    background-color: #666699;
+    width: 200px;
+    height: 50px; 
+    margin: 15px 0px 0px 35px;
+    padding: 0px 0px 0px 0px;
+}
+
+.save_button #save_btn{
+    background-color: rgb(80, 22, 114);
+    color: white; 
+    margin: 0px 0px 0px 0px;
+    padding: 10px 50px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: inline-block; 
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.save_button #save_btn:hover {
+    background-color: rgb(36, 10, 48); /* новый цвет фона при наведении */
+}
+
+.save_button #save_btn span{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: 200;
+}
+
+.save_button_2{
+    background-color: #666699;
+    width: 200px;
+    height: 50px; 
+    margin: -50px 0px 0px 350px;
+    padding: 0px 0px 0px 0px;
+}
+
+.save_button_2 #save_btn_2{
+    background-color: rgb(80, 22, 114);
+    color: white; 
+    margin: 0px 0px 0px 0px;
+    padding: 10px 50px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: inline-block; 
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.save_button_2 #save_btn_2:hover {
+    background-color: rgb(36, 10, 48); /* новый цвет фона при наведении */
+}
+
+.save_button_2 #save_btn_2 span{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: 200;
+}
