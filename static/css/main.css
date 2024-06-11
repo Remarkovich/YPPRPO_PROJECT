@@ -110,7 +110,7 @@ header span {
 .inner-block {
     background-color: #666699;
     color: #FFFF;
-    border: 5px solid black;
+    border: 8px solid black;
     margin-bottom: 30px; /*отступы между*/
     margin: -370px -10px 30px 700px; /*отступы снаружи*/
     padding: 50px 100px 250px 50px; /*отступы внутри*/

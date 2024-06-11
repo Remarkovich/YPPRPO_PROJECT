@@ -1,18 +1,15 @@
-from flask import Flask, request, send_file, render_template, send_from_directory, after_this_request
+from flask import Flask, request, send_file, render_template, send_from_directory, Response, render_template
+from flask import send_from_directory, current_app as app, after_this_request
 from werkzeug.utils import secure_filename
 import os
-import zipfile
 import shutil
 import logging
 
 app = Flask(__name__)
-UPLOAD_FOLDER = 'uploads'
+UPLOAD_FOLDER_1 = 'uploads'
 RESULTS_FOLDER = 'results'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['UPLOAD_FOLDER_1'] = UPLOAD_FOLDER_1
 app.config['RESULTS_FOLDER'] = RESULTS_FOLDER
-
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-os.makedirs(RESULTS_FOLDER, exist_ok=True)
 
 uploaded_files = []
 
@@ -22,66 +19,44 @@ def hello():
 
 @app.route("/upload", methods=["POST"])
 def upload():
+
     if "file" not in request.files:
-        return "No file part", 400
+        return "No file part"
     
     files = request.files.getlist("file")
     if len(files) == 0:
-        return "No files selected", 400
+        return "No files selected"
     
     for file in files:
         if file.filename == "":
-            return "A file has no name", 400
+            return "A file has no name"
         
-        # Берём только имя файла, для сохранения
+        #Берём только имя файла, для сохранения
         filename = secure_filename(file.filename)
         # Сохранить файл
-        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file_path = os.path.join(app.config['UPLOAD_FOLDER_1'], filename)
         file.save(file_path)
         uploaded_files.append(file_path)    
-    return "Files uploaded successfully", 200
+    return ""
 
 @app.route("/process", methods=["POST"])
 def process():
     if not uploaded_files:
-        return "No files to process", 400
-
-    try:
-        # Удаляем папку с предыдущими результатами, если она существует
-        if os.path.exists('data'):
-            shutil.rmtree('data')
-
-        # Распаковываем и удаляем загруженные ZIP файлы
-        for file_path in uploaded_files:
-            file_name, file_extension = os.path.splitext(file_path)
-            if file_extension.lower() == '.zip':
-                with zipfile.ZipFile(file_path, 'r') as zip_ref:
-                    zip_ref.extractall(UPLOAD_FOLDER)
-                os.remove(file_path)
-
-        # Очистка списка загруженных файлов, чтобы не обрабатывать их повторно
-        uploaded_files.clear()
-        
-        # Обработка всех извлечённых файлов
-        os.system("python3 script_converter_json.py")
-
-        # Создание архива с обработанными файлами
-        output_zip_path = os.path.join(app.config['RESULTS_FOLDER'], 'data.zip')
-        with zipfile.ZipFile(output_zip_path, 'w') as zipf:
-            for root, dirs, files in os.walk('data'):
-                for file in files:
-                    file_path = os.path.join(root, file)
-                    zipf.write(file_path, os.path.relpath(file_path, 'data'))
-
-        # Очистка загруженных файлов
-        shutil.rmtree(UPLOAD_FOLDER)
-        os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-
-        return "Files processed successfully", 200
-
-    except Exception as e:
-        logging.error(f"Error processing files: {str(e)}")
-        return f"Error processing files: {str(e)}", 500
+        return "No files to process" 
+    
+    
+    file_path = uploaded_files[0]
+    file_name,file_extension = os.path.splitext(file_path)
+    if file_extension.lower() == '.json':
+        os.system(f'python3 script_converter_json.py')
+    elif file_extension.lower() == '.tfrec':
+        os.system("python3 script_converter_tfrec.py")
+    
+    # Очистка списка uploaded_files для следующей партии загрузок
+    shutil.rmtree(UPLOAD_FOLDER_1)
+    os.mkdir('uploads')
+    
+    return "Files processed successfully"
 
 @app.route("/download/<filename>")
 def uploaded_file(filename):

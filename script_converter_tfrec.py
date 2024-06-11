@@ -24,7 +24,7 @@ def preprocess_image(image):
 
 
 BASE_DIR = "/home/mikhail/YPPRPO/converter/"
-tfrec_dir = "./uploads"
+tfrec_dir = "my_project_2/uploads"
 output_zip = "./results/data.zip"
 
 
